@@ -1,11 +1,10 @@
 <?php
-    echo "Hello World!";
-    echo "Localhost says hi!";
-    $host=gethostbyname('db');
-    echo $host;
-    $uname="root";
-    $pas="swarna99@GB";
-    $link = mysqli_connect($host, $uname, $pas) or die ("cannot connect");
-    
-    echo '------MySQL connected successfully------'
+$host=gethostbyname("db");
+echo '<h4> Jenkins-Task2->Sucessfully connected to mysql"</h4>';
+
+$conn = new mysqli('db','root','swarna99@GB');
+if ($conn->connect_error) {
+    die('Could not connect: ' . $conn->connect_error);
+}
+echo 'Connected successfully';
 ?>
